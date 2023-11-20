@@ -17,7 +17,7 @@ const AppWithState = () => {
                   <Button title='Increase' onPress={() => {
                   setNum(num+1)
               }}/>
-                  <Button title='Decrease' onPress={() => {
+                  <Button title='Decrease' color={'red'} onPress={() => {
                 num<=0?setNum(0):
                   setNum(num-1)
               }}/>
