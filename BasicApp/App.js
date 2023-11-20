@@ -3,14 +3,16 @@ import { ScrollView, StyleSheet, Text, View,Image, Button, TextInput } from 'rea
 import AppWithState from './Components/AppWithState';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import FirstScreen from './Components/FirstScreen';
 import PrintProps from './Components/PrintProps';
 import Todo from './Components/Todo';
+import MyContext, { MyProvider } from './Context/MyContext';
 
 export default function App() {
 
   const Stack = createStackNavigator();
+
   return (
     // <NavigationContainer>
         
@@ -19,9 +21,14 @@ export default function App() {
     //     <Stack.Screen name="PrintProps" component={PrintProps} />
     //   </Stack.Navigator>
     // </NavigationContainer>
-    <View style={style.container}>
+
+
+    <MyProvider>
+        <View style={style.container}>
       <Todo/>
     </View>
+    </MyProvider>
+    
 
   );
 }
