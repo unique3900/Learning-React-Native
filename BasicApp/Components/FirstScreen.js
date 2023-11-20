@@ -40,7 +40,7 @@ const FirstScreen = ({ navigation }) => {
             }}
           />
           <Button title='Pass Props' onPress={() => {
-            navigation.navigate('PrintProps');
+            navigation.navigate('PrintProps',{props:text});
           }}/>
   
         </View>

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-const PrintProps = ({props}) => {
+const PrintProps = ({ route }) => {
+    const {props} = route.params;
   return (
     <View>
-      <Text>Hello</Text>
+          <Text>{props}</Text>
     </View>
   )
 }
