@@ -6,26 +6,28 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { useState } from 'react';
 import FirstScreen from './Components/FirstScreen';
 import PrintProps from './Components/PrintProps';
+import Todo from './Components/Todo';
 
 export default function App() {
 
   const Stack = createStackNavigator();
   return (
-    <NavigationContainer>
+    // <NavigationContainer>
         
-        <Stack.Navigator initialRouteName="FirstScreen">
-        <Stack.Screen name="FirstScreen" component={FirstScreen} />
-        <Stack.Screen name="PrintProps" component={PrintProps} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    //     <Stack.Navigator initialRouteName="FirstScreen">
+    //     <Stack.Screen name="FirstScreen" component={FirstScreen} />
+    //     <Stack.Screen name="PrintProps" component={PrintProps} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+    <View style={style.container}>
+      <Todo/>
+    </View>
 
   );
 }
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+      flex:1,
+      backgroundColor:"#1E1A3C"
+  }
+})

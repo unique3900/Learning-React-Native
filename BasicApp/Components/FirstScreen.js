@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
-import { Button, TextInput } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import { Alert, Button, TextInput } from 'react-native'
 import { Image, Text, View } from 'react-native'
 import AppWithState from './AppWithState'
 
 const FirstScreen = ({ navigation }) => {
-    const [text, setText] = useState("Default Text Value")
+
+    
+    const [text, setText] = useState("")
   return (
     <View style={{
         width: '100%',
         height:'100vh',
         display: 'flex',
         marginTop:'80px',
-        flexDirection: 'column',
+          flexDirection: 'column',
+        justifyContent:'space-around',
         alignItems:'center'
       }}>
         <Text style={{textAlign:'center'}}>Random Text</Text>
@@ -22,12 +25,14 @@ const FirstScreen = ({ navigation }) => {
           style={{width: 200, height: 200}}
           />
           <Text>Some Another Random Texts</Text>
-          <Button title='Take me to the moon'/>
+              <Button title='Take me to the moon' onPress={() => {
+                  Alert.alert("Welcome To FirstScreen")
+          }}/>
         </View>
   
   
         <AppWithState />
-        <View style={{marginTop:'10px'}}>
+        <View >
           <Text style={{fontSize:'1.2rem',fontWeight:'600'}}>Demonstrating Props Passing</Text>
           <TextInput
             editable
