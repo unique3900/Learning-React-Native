@@ -4,7 +4,7 @@ import { Alert, Button, ScrollView, Text, View } from 'react-native'
 const AppWithState = () => {
     const [num, setNum] = useState(0);
   return (
-      <ScrollView>
+      <View>
           <Text style={{fontSize:"2rem",fontWeight:"700"}}>App With State</Text>
           <View style={{
               display: 'flex',
@@ -24,7 +24,7 @@ const AppWithState = () => {
               </View>
               
             </View>
-    </ScrollView>
+    </View>
   )
 }
 
