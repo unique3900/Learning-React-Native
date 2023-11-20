@@ -1,34 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View,Image, Button } from 'react-native';
+import { ScrollView, StyleSheet, Text, View,Image, Button, TextInput } from 'react-native';
 import AppWithState from './Components/AppWithState';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { useState } from 'react';
+import FirstScreen from './Components/FirstScreen';
+import PrintProps from './Components/PrintProps';
 
 export default function App() {
+
+  const Stack = createStackNavigator();
   return (
-    <View style={{
-      width: '100%',
-      height:'100vh',
-      display: 'flex',
-      marginTop:'80px',
-      flexDirection: 'column',
-      alignItems:'center'
-    }}>
-      <Text style={{textAlign:'center'}}>Random Text</Text>
-      <View>
-        <Image  source={{
-            uri: 'https://reactnative.dev/docs/assets/p_cat2.png',
-        }}
-        style={{width: 200, height: 200}}
-        />
-        <Text>Some Another Random Texts</Text>
-        <Button title='Take me to the moon'/>
-      </View>
+    <NavigationContainer>
+        
+        <Stack.Navigator initialRouteName="FirstScreen">
+        <Stack.Screen name="FirstScreen" component={FirstScreen} />
+        <Stack.Screen name="PrintProps" component={PrintProps} />
+      </Stack.Navigator>
+    </NavigationContainer>
 
-
-      <AppWithState/>
-    </View>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
