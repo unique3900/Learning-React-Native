@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView, StyleSheet, Text, View,Image, Button } from 'react-native';
+import AppWithState from './Components/AppWithState';
 
 export default function App() {
   return (
@@ -21,6 +22,9 @@ export default function App() {
         <Text>Some Another Random Texts</Text>
         <Button title='Take me to the moon'/>
       </View>
+
+
+      <AppWithState/>
     </View>
   );
 }
