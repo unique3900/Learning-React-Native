@@ -10,6 +10,8 @@ import Todo from './Components/Todo';
 import MyContext, { MyProvider } from './Context/MyContext';
 import GiveAdvice from './Components/GiveAdvice';
 
+import Animateds from './Components/Animateds';
+
 export default function App() {
 
   const Stack = createStackNavigator();
@@ -28,7 +30,8 @@ export default function App() {
         <View style={style.container}>
         {/* <Todo/> */}
         
-        <GiveAdvice/>
+        {/* <GiveAdvice/> */}
+        <Animateds/>
     </View>
     </MyProvider>
     
