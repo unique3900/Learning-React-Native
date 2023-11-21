@@ -8,6 +8,7 @@ import FirstScreen from './Components/FirstScreen';
 import PrintProps from './Components/PrintProps';
 import Todo from './Components/Todo';
 import MyContext, { MyProvider } from './Context/MyContext';
+import GiveAdvice from './Components/GiveAdvice';
 
 export default function App() {
 
@@ -25,7 +26,9 @@ export default function App() {
 
     <MyProvider>
         <View style={style.container}>
-      <Todo/>
+        {/* <Todo/> */}
+        
+        <GiveAdvice/>
     </View>
     </MyProvider>
     

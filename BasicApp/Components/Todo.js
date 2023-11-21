@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { View,StyleSheet, Text, ScrollView  } from 'react-native'
 import TaskItem from './TaskItem';
 import AddTask from './AddTask';
@@ -8,9 +8,14 @@ const Todo = () => {
     const [tasks, setTasks] = useState([]);
     const { myState, setMyState } = useContext(MyContext);
 
+
+    useEffect(() => {
+        setMyState(tasks.length)
+    }, [tasks.length])
+    
   return (
     <View style={style.container}>
-          <Text style={style.heading}>Todo App {myState}</Text>
+          <Text style={style.heading}>Total Tasks {myState}</Text>
           
           <ScrollView>
               {tasks.map((item, index) => (
