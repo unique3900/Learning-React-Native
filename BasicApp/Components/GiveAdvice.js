@@ -7,9 +7,10 @@ const GiveAdvice = () => {
     const [advice, setAdvice] = useState("");
     const adviceGenerator = async() => {
         const {data}=await axios.get(`https://api.adviceslip.com/advice/${Math.floor(Math.random() *  
-        (200 - 1 + 1) + 1).toString()}`)
+            (200 - 1 + 1) + 1).toString()}`).catch((err) => {
+            setAdvice(err.message)
+        })
         setAdvice(data.slip.advice)
-        
     }
     useEffect(() => {
         adviceGenerator()
@@ -17,7 +18,7 @@ const GiveAdvice = () => {
     
   return (
     <View style={style.container}>
-          <Text style={style.mainText}>Your Advice: {advice }</Text>
+          <Text style={style.mainText}>Your Advice: {advice}</Text>
           <Button title="Another Advice" color={'red'} onPress={() => {
               adviceGenerator()
           }}/>
@@ -32,7 +33,8 @@ const style = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         gap: '10px',
-        alignItems:'center'
+        alignItems: 'center',
+        justifyContent:'center'
     },
     mainText: {
         color: 'white',
